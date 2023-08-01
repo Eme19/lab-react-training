@@ -15,7 +15,7 @@ const handlcClick = ()=> {
     return (
         <div >
              <div className="btn-styFacebook" >
-             <button  onClick={sortByCountry} >Sort by name</button>
+             <button  onClick={sortByCountry} >Sort by Country</button>
                  <button  onClick={null }  >England</button>
                  <button  onClick={null }  >USA</button>
                  <button  onClick={null }  >Malaysia</button>
