@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.dice-style{
+  margin: 5rem;
+}
+
+.clickable-style{
+  margin: 5rem;
+}
+
+table td {
+  border: 2px solid;
+  width: 60rem;
+}
+
+
+span{
+ font-size: 2rem;
+ font-weight: bold;
+ margin: 1rem;
+
+}
+
+.img-style{
+  height: 13rem;
+  float: left;
+  margin: 0.7rem;
+}
+
+ul{
+   display: flex;
+   flex-direction: column;
+   float: left;
+   list-style:none;
+   text-align: start;
+}
+
+li{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+

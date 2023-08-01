@@ -1,0 +1,7 @@
+.number-table tr td{
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+    font-size: 5rem;
+
+}

@@ -1,0 +1,13 @@
+.btn-styFacebook{
+    margin-top: 2rem;
+  }
+
+.btn-styFacebook button {
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: white;
+    cursor: pointer;
+    float: left;
+ }

@@ -1,0 +1,14 @@
+.btn-likebutton{
+    padding: 0.8rem 4rem 0.8rem 4rem;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    border-collapse: collapse;
+    border: transparent;
+    cursor: pointer;
+}
+
+
+
+div{
+    margin-top: 1rem;
+}
