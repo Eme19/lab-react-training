@@ -7,6 +7,8 @@ import NumbersTable from './components/NumbersTable';
 import FaceBook from './components/FaceBook'
 import profiles from './data/berlin.json';
 import SearchBar from './components/SearchBar';
+import SignupPage from './components/SignupaGe'
+
 
 
 
@@ -43,11 +45,19 @@ function App() {
 
   }
                          
- function sortByCountry(){
-
-  const sortedCountry =[...profile].sort((a,b)=> {
-   return a.country.localeCompare(b.country) })
+ function sortByCountry(countryName){
+  const sortedCountry =[...profile].filter((person)=> {
+   return person.country.toLowerCase() === countryName.toLowerCase()})
+   console.log( "sorted country", sortedCountry)
    setProfile(sortedCountry)
+console.log(countryName)
+  }
+
+
+  function sortByName(name) {
+    const sortByName = [...profile].sort((a,b)=> {
+      return a.firstName.localeCompare(b.lastName)})
+      setProfile(sortByName) 
   }
 
 
@@ -74,7 +84,8 @@ function App() {
 
 <NumbersTable limit={12} />
 <SearchBar SearchHandler={SearchHandler}/>
-<FaceBook profile={profile}   sortByCountry={sortByCountry} />
+<FaceBook profile={profile}   sortByCountry={sortByCountry} sortByName={sortByName} />
+<SignupPage/>
     </div>
   );
 }
