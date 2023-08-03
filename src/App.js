@@ -1,91 +1,23 @@
-import { useState } from 'react';
-import LikesButton from './components/LikesButton';
-import Dice from './components/Dice';
-import ClickablePicture from './components/ClickablePicture';
-import Carousel from './components/Carousel';
-import NumbersTable from './components/NumbersTable';
-import FaceBook from './components/FaceBook'
-import profiles from './data/berlin.json';
-import SearchBar from './components/SearchBar';
-import SignupPage from './components/SignupaGe'
-
-
+import * as React from 'react';
+import HomePage from './components/pages/HomePage';
+import LabIteraTion from './components/pages/LabIteraTion';
+import SignupaGe from './components/pages/SignupaGe'
+import {Routes, Route} from 'react-router-dom';
+import ProfilePage from './components/pages/ProfilePage'
 
 
 import './App.css';
 
 function App() {
 
-  const colors = ['purple','blue','green','yellow','orange','red'] 
-
- 
-
-  const [selectedColorIndex, setSelectedColorIndex] = useState(0);
-  const [like, setLike] = useState(0);
-  const [profile, setProfile] = useState(profiles)
- 
-
-
-  
-  function SearchHandler(e){
-    const allUser = profiles.filter((users)=> {
-      return users.firstName.toLowerCase().includes(e.target.value.toLowerCase())
-    })
-    setProfile(allUser)
-  }
-
-
-
-  function nextColor () {
-    const newColorIndex = selectedColorIndex + 1;
-    setLike(like + 1)
-    if (colors[newColorIndex])
-    setSelectedColorIndex(newColorIndex) 
-    else setSelectedColorIndex(0)
-
-  }
-                         
- function sortByCountry(countryName){
-  const sortedCountry =[...profile].filter((person)=> {
-   return person.country.toLowerCase() === countryName.toLowerCase()})
-   console.log( "sorted country", sortedCountry)
-   setProfile(sortedCountry)
-console.log(countryName)
-  }
-
-
-  function sortByName(name) {
-    const sortByName = [...profile].sort((a,b)=> {
-      return a.firstName.localeCompare(b.lastName)})
-      setProfile(sortByName) 
-  }
-
-
- 
- 
-
-  
-
   return (
     <div className="App">
-      
-  
-    <LikesButton nextColor={nextColor} colors={colors} selectedColorIndex={selectedColorIndex} like={like}/>
-    <ClickablePicture img='maxence.png' imgClick='maxence-glasses.png' />
-    <Dice/>
-    <Carousel 
-  images={[
-    'https://randomuser.me/api/portraits/women/1.jpg',
-    'https://randomuser.me/api/portraits/men/1.jpg',
-    'https://randomuser.me/api/portraits/women/2.jpg',
-    'https://randomuser.me/api/portraits/men/2.jpg'
-  ]}
-/>
-
-<NumbersTable limit={12} />
-<SearchBar SearchHandler={SearchHandler}/>
-<FaceBook profile={profile}   sortByCountry={sortByCountry} sortByName={sortByName} />
-<SignupPage/>
+   <Routes>
+<Route path="/" element={<HomePage/>}/>
+<Route path="/about" element={<LabIteraTion/>}/>
+<Route path="/signup-form" element={<SignupaGe/>}/>
+<Route path="/profile" element={<ProfilePage/>}/>
+</Routes>
     </div>
   );
 }

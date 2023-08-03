@@ -1,0 +1,15 @@
+.signup-style{
+   
+}
+
+.form{
+    display:flex;
+    justify-content: center;
+    width: 40%;
+}
+
+.lablel-signup{
+    display:flex;
+    flex-direction: column;
+    margin: 0px;
+}
