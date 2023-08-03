@@ -34,7 +34,7 @@ function handleChangeIndex(){
             setDice(diceArray[randomDiceIndex])
         },1000)
     }
-})
+}, [dice])
 
 
     return (  

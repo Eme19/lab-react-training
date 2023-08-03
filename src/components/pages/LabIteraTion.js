@@ -24,6 +24,7 @@ function LabIteraTion() {
   const [like, setLike] = useState(0);
   const [profile, setProfile] = useState(profiles)
   
+  
  
 
 
@@ -45,24 +46,7 @@ function LabIteraTion() {
     else setSelectedColorIndex(0)
 
   }
-                         
- function sortByCountry(countryName){
-  const sortedCountry =[...profile].filter((person)=> {
-   return person.country.toLowerCase() === countryName.toLowerCase()})
-   console.log( "sorted country", sortedCountry)
-   setProfile(sortedCountry)
-console.log(countryName)
-  }
 
-
-  function sortByName() {
-    const sortByName = [...profile].sort((a,b)=> {
-      return a.firstName.localeCompare(b.lastName)})
-      setProfile(sortByName) 
-  }
-
-
- 
 
   return (
     <div className="App">
@@ -86,7 +70,7 @@ console.log(countryName)
 
 <NumbersTable limit={12} />
 <SearchBar SearchHandler={SearchHandler}/>
-<FaceBook profile={profile}   sortByCountry={sortByCountry} sortByName={sortByName} /> 
+<FaceBook profile={profile}  /> 
 
     </div>
   );
